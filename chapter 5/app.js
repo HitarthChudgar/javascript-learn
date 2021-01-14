@@ -70,3 +70,42 @@ heading.setAttribute('style', 'color: aqua;');
 
 //changing and adding CSS styles
 
+const text = document.querySelector('h2');
+text.style.color = 'green';
+text.style.margin = '10px';
+text.style.fontSize = '40px';
+
+//adding & removing classes
+const contentClass = document.querySelector('p');
+console.log(contentClass.classList);
+contentClass.classList.add('error');
+contentClass.classList.remove('error');
+contentClass.classList.add('success');
+
+//practice question
+const parasTest = document.querySelectorAll('p');
+parasTest.forEach(p => {
+    if(p.textContent.includes('error')){
+        p.classList.add('error');
+    }
+    if(p.textContent.includes('success')){
+        p.classList.add('success');
+    }
+})
+
+//toggle class
+const title = document.querySelector('.title');
+//adds
+title.classList.toggle('test');
+//removes
+title.classList.toggle('test');
+
+//parents, children & siblings
+const article = document.querySelector('article');
+Array.from(article.children).forEach(child => {
+    child.classList.add('article-elem');
+})
+
+//chaining
+const titleChain = document.querySelector('h3');
+console.log(titleChain.nextElementSibling.previousElementSibling.parentElement);
