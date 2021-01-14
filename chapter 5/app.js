@@ -109,3 +109,37 @@ Array.from(article.children).forEach(child => {
 //chaining
 const titleChain = document.querySelector('h3');
 console.log(titleChain.nextElementSibling.previousElementSibling.parentElement);
+
+//a minmal to-do list
+const items = document.querySelectorAll('li');
+items.forEach(item => {
+    item.addEventListener('click', e => {
+        console.log(e.target);
+        e.target.style.textDecoration = 'line-through';
+        e.target.remove();
+    })
+})
+
+//adding stuff
+const addStuff = document.querySelector('button');
+const ul = document.querySelector('ul');
+addStuff.addEventListener('click', () => {
+    const li = document.createElement('li');
+    li.textContent = 'new';
+    ul.prepend(li);
+})
+
+//more dom events
+const copy = document.querySelector('.copy');
+copy.addEventListener('copy', () => {
+    console.log('you cant copy');
+})
+
+const box = document.querySelector('.box');
+box.addEventListener('mousemove', e => {
+    box.textContent = `x pos - ${e.offsetX} y post - ${e.offsetY}`;
+})
+
+document.addEventListener('wheel', e => {
+    console.log(e.pageX, e.pageY);
+})

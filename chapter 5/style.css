@@ -5,3 +5,35 @@
 .error{
     color: tomato;
 }
+
+li{
+    list-style-type: none;
+    max-width: 200px;
+    padding: 8px;
+    margin: 8px auto;
+    background: #eee;
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: #eee;
+}
+
+button{
+    display: block;
+    margin: 20px auto;
+    background: crimson;
+    color: wheat;
+    border: 0;
+    padding: 6px 10px;
+}
+
+.popup-wrapper{
+    background-image: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
