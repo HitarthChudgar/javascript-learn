@@ -1,0 +1,17 @@
+form{
+    max-width: 200px;
+    margin: 40px auto;
+    background: wheat;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+input{
+    display: block;
+    margin: 10px auto;
+    padding: 4px;
+}
+
+#username{
+    margin-bottom: 10px;
+}
