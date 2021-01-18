@@ -15,3 +15,11 @@ input{
 #username{
     margin-bottom: 10px;
 }
+
+.success{
+    border: 1px solid greenyellow;
+}
+
+.error{
+    border: 1px solid crimson;
+}
