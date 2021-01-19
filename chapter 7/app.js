@@ -65,3 +65,33 @@ const findNum = numberFind.find(numbers => {
 });
 
 console.log(findNum);
+
+//sort method
+
+//sorting strings
+const names = ['hitu','there','awesome'];
+names.sort(); //alters the original array (destructive)
+console.log(names);
+
+//sorting objects
+const players = [
+    {name: 'hitarth', score: 25},
+    {name:'eric', score: 15},
+    {name: 'adhoxaja', score: 20},
+    {name: 'rdj', score: 10}
+];
+
+// players.sort((a,b) => {
+//     if(a.score > b.score){
+//         return -1;
+//     }else if(b.score > a.score){
+//         return 1
+//     }else{
+//         return 0;
+//     }
+// })
+
+//efficient method using same concept of positive, negative or equal
+players.sort((a,b) => b.score - a.score);
+
+console.log(players);
