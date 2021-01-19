@@ -39,3 +39,29 @@ const mapProduct = products.map(product => {
 console.log(mapProduct);
 
 //reduce method
+const productsTest = [
+    {name: 'reebok', price: 30},
+    {name: 'reebok', price: 50},
+    {name: 'adidas', price: 40},
+    {name: 'nike', price: 50},
+    {name: 'puma', price: 45}
+];
+
+const reduceProducts = productsTest.reduce((acc,prodred) => {
+    if(prodred.name === 'reebok'){
+        acc += prodred.price;
+    }
+    return acc
+}, 0);
+
+console.log(reduceProducts);
+
+//find method
+const numberFind = [10,25,40,60,65,30,90];
+
+//finds the first that satisifies condition
+const findNum = numberFind.find(numbers => {
+    return numbers > 25;
+});
+
+console.log(findNum);
