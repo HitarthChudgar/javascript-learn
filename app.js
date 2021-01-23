@@ -33,3 +33,13 @@ console.log(`the blog was written ${days} ago`);
 //convverting time stamps into date objects
 const timestamp = 1647897598;
 console.log(new Date(timestamp));
+
+//date-fns test
+const date_fns = new Date();
+console.log(dateFns.isToday(now));
+
+//formatting options
+console.log(dateFns.format(now, 'YYYY'));
+console.log(dateFns.format(now, 'MMMM'));
+console.log(dateFns.format(now, 'Do'));
+console.log(dateFns.format(now, 'dddd, Do, MM, YY'));
