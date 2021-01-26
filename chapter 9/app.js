@@ -15,13 +15,14 @@ const getTodos = (callback) => {
     request.addEventListener('readystatechange', () => {
         // console.log(request, request.readyState);
         if (request.readyState === 4 && request.status === 200) { //different states of the xmlhttp request and make sure it is a okay response
-            callback(undefined, request.responseText);
+            const data = JSON.parse(request.responseText); //converting JSON to objects in Javascript
+            callback(undefined, data); 
         } else if (request.readyState === 4) {
             callback('could not fetch data', undefined);
         }
     });
 
-    request.open('GET', 'https://jsonplaceholder.typicode.com/todos/'); //setting up the request
+    request.open('GET', './todo.json'); //setting up the request
     request.send(); //sending the request
 };
 
