@@ -9,7 +9,7 @@ setTimeout(() => {
 console.log(3);
 console.log(4);
 
-const getTodos = (callback) => {
+const getTodos = (resource, callback) => {
     //making HTTP requests
     const request = new XMLHttpRequest();
     request.addEventListener('readystatechange', () => {
@@ -22,15 +22,13 @@ const getTodos = (callback) => {
         }
     });
 
-    request.open('GET', './todo.json'); //setting up the request
+    request.open('GET', resource); //setting up the request
     request.send(); //sending the request
 };
 
-getTodos((err, data) => {
-    console.log('callback fired');
-    if(err){
-        console.log(err);
-    }else{
+getTodos('./todos/hitu.json', (err, data) => {
+    console.log(data);
+    getTodos('./todos/todo.json', (err, data) => {
         console.log(data);
-    }
+    })
 });
