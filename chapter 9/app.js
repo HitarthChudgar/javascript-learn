@@ -40,16 +40,26 @@ getTodos('./todos/hitu.json').then(data => {
 
 //promise example
 
-// const getSomething = () =>{
-//     return new Promise((resolve, reject) => { //promise can be resolved or rejected
-//         //fetch something
-//         // resolve('get some data');
-//         reject('some error')
-//     }); 
-// }
+const getSomething = () => {
+    return new Promise((resolve, reject) => { //promise can be resolved or rejected
+        //fetch something
+        // resolve('get some data');
+        reject('some error')
+    });
+}
 
-// getSomething().then(data => {
-//     console.log(data);
-// }).catch(err => {
-//     console.log(err);
-// })
+getSomething().then(data => {
+    console.log(data);
+}).catch(err => {
+    console.log(err);
+})
+
+//fetch api
+fetch('./todos/todo.json').then((response) => { //promises are only rejected in fetch api during a network error
+    console.log('resolved', response);
+    return response.json();
+}).then((data) => {
+    console.log(data);
+}).catch((err) => {
+    console.log('reject', err);
+});
