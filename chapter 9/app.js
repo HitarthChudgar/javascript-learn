@@ -65,11 +65,18 @@
 // });
 
 //async and await
-const getTodosAsync = async () =>{ //declaring an async function
-    const response = await fetch('./todos/hitu.json'); //promise and won't assign to response unless it fetches same for below
+const getTodosAsync = async () => { //declaring an async function
+    const response = await fetch('./todos/hitus.json'); //promise and won't assign to response unless it fetches same for below
+    
+    if (response.status !== 200) {
+        throw new Error('Cannot find the given end point');
+    }
+
     const data = await response.json();
     return data;
 };
 
 //calling an async function
-getTodosAsync().then(data => console.log('resolved', data)); //non blocking but have to use then to return data otherwise returns a promise
+getTodosAsync() //non blocking but have to use then to return data otherwise returns a promise
+    .then(data => console.log('resolved:', data))
+    .catch(err => console.log('rejected:', err.message)); //catch is called when a promise is rejected and async fails
